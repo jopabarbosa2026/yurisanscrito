@@ -1681,34 +1681,7 @@ footer .links a:hover { color: var(--saffron-bright); }
   .credentials-strip { gap: 1rem; flex-direction: column; }
   .btn-primary.huge { padding: 1.4rem 2.4rem; font-size: 1rem; }
 }
-
-    /* Screenshot testimonials grid */
-    .screenshot-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1rem;
-      align-items: start;
-    }
-    .screenshot-card {
-      border-radius: 16px;
-      overflow: hidden;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
-      background: transparent;
-      line-height: 0;
-    }
-    .screenshot-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-radius: 16px;
-    }
-    @media (max-width: 640px) {
-      .screenshot-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+</style>
 
 <!-- Meta Pixel Code -->
 <script>
@@ -1736,7 +1709,7 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
 <div class="sticky-bar" id="stickyBar">
   <div class="info">
     <div class="label">Método S.A.F.E.R.A · Próxima turma</div>
-    <div class="value">8, 15, 22 e 29/jul · Quartas 19h30</div>
+    <div class="value">8, 15, 22 e 29/jul · Quartas 19h30 · R$ 545</div>
   </div>
   <a href="#oferta" class="btn-sticky">Garantir minha vaga</a>
 </div>
@@ -1775,6 +1748,12 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
           <div style="font-size:0.82rem; color:var(--ink-mute); margin-top:0.2rem;">das 19h30 às 21h · horário de Brasília</div>
         </div>
 
+        <div class="price-block">
+          <span class="price-main">R$ 545</span>
+          <span class="price-pix">à vista no PIX</span>
+          <div class="price-installments">ou <strong>12x R$ 56,40</strong> no cartão</div>
+        </div>
+
         <a href="#oferta" class="btn-primary">Garantir minha vaga</a>
 
         <div class="seal">
@@ -1807,96 +1786,100 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
          servidor junto com este HTML, no mesmo diretório.
          Preencher os campos .name e .role de cada aluno.
          ============================================================ -->
-            <div class="video-grid">
-      <div class="video-card" data-src="/videos/dep-1-rayar.mp4">
+    <div class="video-grid">
+      <div class="video-card" data-src="videos/depoimento-1.mp4">
         <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-1-rayar.mp4#t=0.1"></video>
+               src="videos/depoimento-1.mp4#t=0.1"></video>
         <div class="play"></div>
+        <div class="meta">
+          <div class="name">[Nome do aluno 1]</div>
+          <div class="role">[Perfil · Cidade]</div>
+        </div>
       </div>
-      <div class="video-card" data-src="/videos/dep-2-fabian.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-2-fabian.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-3-bruna-primazi.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-3-bruna-primazi.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-4-murilo.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-4-murilo.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-5-bruna.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-5-bruna.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-6-cezar.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-6-cezar.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-7-paula.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-7-paula.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-8-amanda.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-8-amanda.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-9-rosana.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-9-rosana.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-10.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-10.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-      <div class="video-card" data-src="/videos/dep-11.mp4">
-        <video class="video-thumb" preload="metadata" muted playsinline
-               src="/videos/dep-11.mp4#t=0.1"></video>
-        <div class="play"></div>
-      </div>
-    </div>
 
+      <div class="video-card" data-src="videos/depoimento-2.mp4">
+        <video class="video-thumb" preload="metadata" muted playsinline
+               src="videos/depoimento-2.mp4#t=0.1"></video>
+        <div class="play"></div>
+        <div class="meta">
+          <div class="name">[Nome do aluno 2]</div>
+          <div class="role">[Perfil · Cidade]</div>
+        </div>
+      </div>
 
-    <!-- SCREENSHOT TESTIMONIALS -->
-    <div style="margin-top: 3rem;">
-      <div class="screenshot-grid">
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-filipe.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-patricia.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-vanessa.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-clovis.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-joao-tulio.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-marcelo.jpeg" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-daniela.png" alt="Depoimento" loading="lazy">
-        </div>
-        <div class="screenshot-card">
-          <img src="/depoimentos/dep-raquel.png" alt="Depoimento" loading="lazy">
+      <div class="video-card" data-src="videos/depoimento-3.mp4">
+        <video class="video-thumb" preload="metadata" muted playsinline
+               src="videos/depoimento-3.mp4#t=0.1"></video>
+        <div class="play"></div>
+        <div class="meta">
+          <div class="name">[Nome do aluno 3]</div>
+          <div class="role">[Perfil · Cidade]</div>
         </div>
       </div>
     </div>
 
-  </section>
+    <!-- TEXT TESTIMONIALS PLACEHOLDERS -->
+    <div class="text-testimonials">
+      <article class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>[Depoimento em texto do aluno 1 — sobre a transformação que viveu no método. 2 a 4 linhas, de preferência mencionando uma virada concreta na prática mântrica.]</p>
+        <div class="person">
+          <div class="avatar">A</div>
+          <div class="info">
+            <div class="name">[Nome do aluno]</div>
+            <div class="role">[Perfil · Cidade]</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>[Depoimento em texto do aluno 2 — outro perfil, outra dor resolvida. Variar entre professor de yoga, devocional bhakti, estudante sério.]</p>
+        <div class="person">
+          <div class="avatar">B</div>
+          <div class="info">
+            <div class="name">[Nome do aluno]</div>
+            <div class="role">[Perfil · Cidade]</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>[Depoimento em texto do aluno 3 — perspectiva diferente, ex: alguém que estudava sozinho há anos e finalmente sentiu progresso.]</p>
+        <div class="person">
+          <div class="avatar">C</div>
+          <div class="info">
+            <div class="name">[Nome do aluno]</div>
+            <div class="role">[Perfil · Cidade]</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="testimonial-card">
+        <div class="quote-mark">"</div>
+        <p>[Depoimento em texto do aluno 4 — talvez alguém que ensina yoga ou kirtan e ganhou autonomia para liderar.]</p>
+        <div class="person">
+          <div class="avatar">D</div>
+          <div class="info">
+            <div class="name">[Nome do aluno]</div>
+            <div class="role">[Perfil · Cidade]</div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <div class="credentials-strip">
+      <div class="credential">+600 alunos formados</div>
+      <div class="credential">10+ anos imerso na tradição</div>
+      <div class="credential">Acompanhamento individual exclusivo</div>
+    </div>
+
+    <div class="btn-center">
+      <a href="#oferta" class="btn-primary">Quero aprender com o Yuri</a>
+    </div>
+  </div>
+</section>
 
 <!-- ========================================================== -->
 <!-- BLOCO 3 — PARA QUEM É E NÃO É (Qualificação) -->
@@ -2169,7 +2152,7 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
   <div class="container">
     <div class="expert-grid">
       <div class="expert-photo">
-        <img src="/yuri-varanasi.jpeg" alt="Yuri Vāmadeva Śiva em Vārāṇasī, junto ao Ganges">
+        <img src="yuri-varanasi.jpeg" alt="Yuri Vāmadeva Śiva em Vārāṇasī, junto ao Ganges">
       </div>
 
       <div class="expert-content">
@@ -2405,6 +2388,97 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
 </section>
 
 </main>
+
+<!-- ========================================================== -->
+<!-- BOTÃO FLUTUANTE WHATSAPP -->
+<!-- ========================================================== -->
+<a
+  href="https://wa.me/5511997508182"
+  target="_blank"
+  rel="noopener noreferrer"
+  class="whatsapp-fab"
+  aria-label="Fale conosco pelo WhatsApp"
+  title="Fale conosco pelo WhatsApp"
+>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="28" height="28" fill="currentColor" aria-hidden="true">
+    <path d="M16 0C7.163 0 0 7.163 0 16c0 2.822.737 5.469 2.027 7.773L0 32l8.448-2.007A15.93 15.93 0 0 0 16 32c8.837 0 16-7.163 16-16S24.837 0 16 0zm0 29.333a13.27 13.27 0 0 1-6.771-1.849l-.486-.287-5.015 1.192 1.214-4.891-.317-.503A13.258 13.258 0 0 1 2.667 16C2.667 8.636 8.636 2.667 16 2.667S29.333 8.636 29.333 16 23.364 29.333 16 29.333zm7.27-9.845c-.397-.199-2.353-1.161-2.717-1.293-.365-.133-.63-.199-.895.199-.265.397-1.029 1.293-1.261 1.558-.232.265-.464.298-.861.1-.397-.199-1.677-.618-3.195-1.972-1.18-1.054-1.977-2.356-2.209-2.753-.232-.397-.025-.611.174-.809.178-.177.397-.464.596-.696.199-.232.265-.397.397-.662.133-.265.066-.497-.033-.696-.1-.199-.895-2.157-1.227-2.953-.322-.775-.648-.669-.895-.681-.231-.012-.497-.015-.762-.015-.265 0-.696.1-1.061.497-.365.397-1.394 1.36-1.394 3.317s1.427 3.847 1.626 4.113c.199.265 2.808 4.287 6.804 6.015.951.411 1.692.657 2.271.841.954.304 1.823.261 2.51.158.766-.114 2.353-.962 2.685-1.891.332-.929.332-1.726.232-1.891-.099-.166-.364-.265-.762-.464z"/>
+  </svg>
+  <span class="whatsapp-fab-tooltip">Dúvidas? Fale comigo</span>
+</a>
+
+<style>
+.whatsapp-fab {
+  position: fixed;
+  bottom: 1.75rem;
+  right: 1.75rem;
+  z-index: 9999;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0,0,0,0.18);
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  animation: whatsapp-pulse 2.8s ease-in-out infinite;
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1) translateY(-2px);
+  box-shadow: 0 6px 24px rgba(37, 211, 102, 0.6), 0 3px 10px rgba(0,0,0,0.22);
+  animation: none;
+}
+
+.whatsapp-fab-tooltip {
+  position: absolute;
+  right: 68px;
+  background: #1A0805;
+  color: #FAF5E8;
+  font-family: 'Cardo', Georgia, serif;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  padding: 0.45rem 0.8rem;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  border: 1px solid rgba(201, 166, 86, 0.3);
+}
+
+.whatsapp-fab-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  border: 5px solid transparent;
+  border-left-color: #1A0805;
+}
+
+.whatsapp-fab:hover .whatsapp-fab-tooltip,
+.whatsapp-fab:focus .whatsapp-fab-tooltip {
+  opacity: 1;
+}
+
+@keyframes whatsapp-pulse {
+  0%, 100% { box-shadow: 0 4px 18px rgba(37, 211, 102, 0.45), 0 2px 8px rgba(0,0,0,0.18); }
+  50% { box-shadow: 0 4px 28px rgba(37, 211, 102, 0.75), 0 2px 14px rgba(0,0,0,0.2); }
+}
+
+@media (max-width: 600px) {
+  .whatsapp-fab {
+    bottom: 1.25rem;
+    right: 1.25rem;
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-fab-tooltip { display: none; }
+}
+</style>
 
 <footer>
   © Método S.A.F.E.R.A · Yuri D. Wolf · Vāmadeva Śiva
