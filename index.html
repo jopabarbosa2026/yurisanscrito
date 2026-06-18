@@ -78,77 +78,6 @@ h1, h2, h3, h4 {
 
 .devanagari { font-family: 'Tiro Devanagari Sanskrit', serif; }
 
-/* === STICKY BAR === */
-.sticky-bar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  background: var(--maroon-deep);
-  color: var(--cream);
-  z-index: 100;
-  padding: 0.85rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  border-bottom: 1px solid var(--gold-deep);
-  box-shadow: 0 2px 14px rgba(0,0,0,0.25);
-  transform: translateY(-100%);
-  transition: transform 0.35s ease;
-}
-
-.sticky-bar.visible { transform: translateY(0); }
-
-.sticky-bar .info {
-  display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
-}
-
-.sticky-bar .info .label {
-  font-size: 0.7rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold-soft);
-  font-weight: 700;
-}
-
-.sticky-bar .info .value {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.15rem;
-  color: var(--cream);
-  font-weight: 500;
-}
-
-.sticky-bar .btn-sticky {
-  background: var(--saffron);
-  color: var(--cream);
-  padding: 0.8rem 1.6rem;
-  border-radius: 3px;
-  font-family: 'Cardo', serif;
-  font-size: 0.82rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  font-weight: 700;
-  text-decoration: none;
-  transition: background 0.2s, transform 0.15s;
-  white-space: nowrap;
-  border: 1px solid var(--saffron-deep);
-}
-
-.sticky-bar .btn-sticky:hover {
-  background: var(--saffron-bright);
-  transform: translateY(-1px);
-}
-
-@media (max-width: 700px) {
-  .sticky-bar { padding: 0.65rem 0.9rem; gap: 0.7rem; }
-  .sticky-bar .info .label { display: none; }
-  .sticky-bar .info .value { font-size: 0.92rem; }
-  .sticky-bar .btn-sticky { padding: 0.65rem 1rem; font-size: 0.7rem; letter-spacing: 0.12em; }
-}
-
 /* === SECTIONS BASE === */
 section { padding: 6rem 1.5rem; position: relative; }
 
@@ -1801,15 +1730,6 @@ footer .links a:hover { color: var(--saffron-bright); }
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager -->
 
-<!-- === STICKY TOP BAR === -->
-<div class="sticky-bar" id="stickyBar">
-  <div class="info">
-    <div class="label">Método S.A.F.E.R.A · Próxima turma</div>
-    <div class="value">8, 15, 22 e 29/jul · Quartas 19h30 · R$ 545</div>
-  </div>
-  <a href="https://pay.herospark.com/sanscrito-aplicado-ao-mantrayoga-524454" class="btn-sticky" target="_blank" rel="noopener noreferrer">Garantir minha vaga</a>
-</div>
-
 <main>
 
 <!-- ========================================================== -->
@@ -2631,22 +2551,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <script>
-// === STICKY BAR ON SCROLL ===
-const stickyBar = document.getElementById('stickyBar');
-const heroSection = document.querySelector('.hero');
-
-function checkSticky() {
-  const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-  if (window.scrollY > heroBottom - 150) {
-    stickyBar.classList.add('visible');
-  } else {
-    stickyBar.classList.remove('visible');
-  }
-}
-
-window.addEventListener('scroll', checkSticky, { passive: true });
-checkSticky();
-
 // === SMOOTH SCROLL FOR ANCHOR LINKS ===
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
