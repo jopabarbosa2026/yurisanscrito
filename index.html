@@ -245,8 +245,7 @@ section { padding: 6rem 1.5rem; position: relative; }
 .hero {
   background: var(--maroon-deep);
   color: var(--cream);
-  padding: 7rem 1.5rem 5rem;
-  min-height: 100vh;
+  padding: 6rem 1.5rem 5rem;
   display: flex;
   align-items: center;
   position: relative;
@@ -283,15 +282,74 @@ section { padding: 6rem 1.5rem; position: relative; }
   width: 100%;
 }
 
+/* VSL HERO LAYOUT */
+.hero-vsl-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.hero-vsl-head {
+  text-align: center;
+  max-width: 720px;
+}
+
+.hero-vsl-head .eyebrow { color: var(--gold-soft); margin-bottom: 1.5rem; }
+.hero-vsl-head .eyebrow::before,
+.hero-vsl-head .eyebrow::after { background: var(--gold-deep); }
+
+.vsl-wrapper {
+  width: 100%;
+  max-width: 860px;
+}
+
+.vsl-frame {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,166,86,0.25);
+}
+
+.vsl-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.vsl-caption {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+  margin-top: 0.75rem;
+  font-style: italic;
+}
+
+.offer-card--below-vsl {
+  width: 100%;
+  max-width: 520px;
+}
+
 .hero-content .eyebrow { color: var(--gold-soft); margin-bottom: 2rem; }
 .hero-content .eyebrow::before, .hero-content .eyebrow::after { background: var(--gold-deep); }
 
 .hero h1 {
-  font-size: clamp(2.6rem, 5.2vw, 4.4rem);
+  font-size: clamp(2.2rem, 4.5vw, 3.6rem);
   color: var(--cream);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1.2rem;
   font-weight: 500;
   letter-spacing: -0.015em;
+  text-align: center;
 }
 
 .hero h1 em {
@@ -301,14 +359,15 @@ section { padding: 6rem 1.5rem; position: relative; }
 }
 
 .hero-subhead {
-  font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+  font-size: clamp(1.05rem, 1.4vw, 1.15rem);
   color: var(--parchment);
   line-height: 1.55;
   font-style: italic;
   font-family: 'Cormorant Garamond', serif;
-  max-width: 560px;
-  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin: 0 auto 0;
   font-weight: 400;
+  text-align: center;
 }
 
 .hero-bullets {
@@ -1721,28 +1780,38 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
 <!-- ========================================================== -->
 <section class="hero">
   <div class="container">
-    <div class="hero-grid">
-      <div class="hero-content">
-        <span class="eyebrow">ॐ&nbsp;&nbsp;Método S.A.F.E.R.A · Próxima Turma</span>
 
-        <h1>Da repetição automática à <em>pronúncia autônoma</em> do sânscrito aplicado ao Mantrayoga.</h1>
+    <div class="hero-vsl-layout">
 
-        <p class="hero-subhead">Um treinamento ao vivo, em quatro encontros conduzidos por Yuri Wolf (Vāmadeva Śiva), onde você aprende as bases pra recitar seu sânscrito com a precisão da tradição.</p>
-
-        <ul class="hero-bullets">
-          <li><strong>4 aulas ao vivo de 1h30</strong> — 8, 15, 22 e 29 de julho, quartas-feiras das 19h30 às 21h</li>
-          <li><strong>Acompanhamento individual pelo WhatsApp</strong> — você envia áudios e o professor corrige, lapidando juntos até sua pronúncia ficar impecável</li>
-          <li><strong>Gravações disponíveis por 1 ano</strong> para revisitar quando quiser</li>
-          <li><strong>Certificado de recitador(a)</strong> com honra ao mérito</li>
-        </ul>
+      <!-- HEADLINE -->
+      <div class="hero-vsl-head">
+        <span class="eyebrow centered">ॐ&nbsp;&nbsp;Método S.A.F.E.R.A · Próxima Turma · Julho 2025</span>
+        <h1>Assista ao vídeo e descubra como pronunciar sânscrito com <em>a precisão da tradição</em> — em quatro encontros ao vivo.</h1>
+        <p class="hero-subhead">Yuri Vāmadeva Śiva explica o método, o que você vai aprender e por que centenas de praticantes já atravessaram essa travessia.</p>
       </div>
 
-      <aside class="offer-card">
+      <!-- VSL -->
+      <div class="vsl-wrapper">
+        <div class="vsl-frame">
+          <iframe
+            src="https://player.vimeo.com/video/1202580736?h=6eadd7b988&title=0&byline=0&portrait=0&badge=0&autopause=0&player_id=0&app_id=58479"
+            frameborder="0"
+            allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
+            title="Yuri Vāmadeva Śiva — Método S.A.F.E.R.A"
+          ></iframe>
+        </div>
+        <p class="vsl-caption">🔊 Ative o som · assista até o fim</p>
+      </div>
+
+      <!-- OFFER CARD ABAIXO DO VSL -->
+      <aside class="offer-card offer-card--below-vsl">
         <div class="offer-label">Próxima Turma · Inscrições Abertas</div>
         <h3 class="offer-title">Método S.A.F.E.R.A<br><em style="font-style: italic; color: var(--saffron-deep); font-weight: 500;">8, 15, 22 e 29 de julho</em></h3>
         <div class="offer-divider"></div>
 
-        <div style="text-align:center; margin-bottom:1rem; position:relative;">
+        <div style="text-align:center; margin-bottom:1rem;">
           <div style="font-size:0.7rem; letter-spacing:0.22em; text-transform:uppercase; color:var(--saffron-deep); font-weight:700; margin-bottom:0.4rem;">Quartas-feiras · via Zoom</div>
           <div style="font-family:'Cormorant Garamond',serif; font-size:1.15rem; color:var(--maroon); font-weight:600;">8 · 15 · 22 · 29 de julho</div>
           <div style="font-size:0.82rem; color:var(--ink-mute); margin-top:0.2rem;">das 19h30 às 21h · horário de Brasília</div>
@@ -1761,6 +1830,7 @@ src="https://www.facebook.com/tr?id=813929181527753&ev=PageView&noscript=1"
           <span>Garantia de 15 dias · 100% do valor</span>
         </div>
       </aside>
+
     </div>
   </div>
 </section>
