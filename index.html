@@ -311,7 +311,34 @@ section { padding: 6rem 1.5rem; position: relative; }
 .hero-vsl-head .eyebrow::before,
 .hero-vsl-head .eyebrow::after { background: var(--gold-deep); }
 
-.vsl-wrapper {
+.hero-vsl-bullets {
+  list-style: none;
+  margin: 0 auto 0;
+  max-width: 620px;
+  text-align: left;
+  display: inline-block;
+}
+
+.hero-vsl-bullets li {
+  padding: 0.45rem 0 0.45rem 1.8rem;
+  position: relative;
+  color: var(--parchment);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.hero-vsl-bullets li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  color: var(--saffron);
+  font-size: 0.65rem;
+}
+
+.hero-vsl-bullets li strong {
+  color: var(--cream);
+}
   width: 100%;
   max-width: 860px;
 }
@@ -1795,7 +1822,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="hero-vsl-head">
         <span class="eyebrow centered">ॐ&nbsp;&nbsp;Método S.A.F.E.R.A</span>
         <h1>Assista ao vídeo e descubra como pronunciar sânscrito com <em>a precisão da tradição</em>.</h1>
-        <p class="hero-subhead">Yuri Vāmadeva Śiva explica o método, o que você vai aprender e por que centenas de praticantes já atravessaram essa travessia.</p>
+        <p class="hero-subhead">Nos próximos minutos, sem você precisar comprar nada, eu vou te entregar um estudo guiado de verdade. Você vai aprender três detalhes da pronúncia sânscrita que praticamente nenhum praticante ocidental conhece.</p>
+
+        <ul class="hero-vsl-bullets">
+          <li><strong>Vogais longas e curtas</strong> — o erro que muda completamente o significado do mantra</li>
+          <li><strong>Aspirações</strong> — os sons que o português não tem e que a maioria ignora na recitação</li>
+          <li><strong>Retroflexas + aplicação em mantra real</strong> — como soam na prática e onde errar mais dói</li>
+        </ul>
       </div>
 
       <!-- VSL -->
