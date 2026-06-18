@@ -671,18 +671,28 @@ section { padding: 6rem 1.5rem; position: relative; }
 }
 
 .text-testimonials {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  columns: 3;
+  column-gap: 1.25rem;
   margin-bottom: 3rem;
 }
 
+@media (max-width: 900px) {
+  .text-testimonials { columns: 2; }
+}
+@media (max-width: 560px) {
+  .text-testimonials { columns: 1; }
+}
+
 .testimonial-card {
+  break-inside: avoid;
+  display: block;
+  margin-bottom: 1.25rem;
   background: var(--parchment-soft);
   border: 1px solid var(--parchment-deep);
   border-left: 3px solid var(--saffron);
-  padding: 2rem 1.8rem;
   border-radius: 2px;
+  overflow: hidden;
+  line-height: 0;
 }
 
 .testimonial-card .quote-mark {
@@ -1916,35 +1926,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="text-testimonials">
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-clovis.jpeg" alt="Depoimento de Clóvis" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-clovis.jpeg" alt="Depoimento de Clóvis" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-daniela.png" alt="Depoimento de Daniela" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-daniela.png" alt="Depoimento de Daniela" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-filipe.jpeg" alt="Depoimento de Filipe" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-filipe.jpeg" alt="Depoimento de Filipe" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-joao-tulio.jpeg" alt="Depoimento de João Túlio" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-joao-tulio.jpeg" alt="Depoimento de João Túlio" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-marcelo.jpeg" alt="Depoimento de Marcelo" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-marcelo.jpeg" alt="Depoimento de Marcelo" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-patricia.jpeg" alt="Depoimento de Patrícia" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-patricia.jpeg" alt="Depoimento de Patrícia" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-raquel.png" alt="Depoimento de Raquel" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-raquel.png" alt="Depoimento de Raquel" style="width:100%;display:block;">
       </article>
 
       <article class="testimonial-card">
-        <img src="depoimentos/dep-vanessa.jpeg" alt="Depoimento de Vanessa" style="width:100%;border-radius:8px;display:block;">
+        <img src="depoimentos/dep-vanessa.jpeg" alt="Depoimento de Vanessa" style="width:100%;display:block;">
       </article>
 
     </div>
