@@ -2645,12 +2645,28 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 })();
 
 // === CHECKOUT LINK (HERO SPARK) ===
-// Replace href with real Hero Spark checkout URL when ready
 const checkoutUrl = 'https://pay.herospark.com/sanscrito-aplicado-ao-mantrayoga-524454';
+
+function trackAndGo(e) {
+  e.preventDefault();
+  const url = checkoutUrl;
+  if (typeof fbq === 'function') {
+    fbq('track', 'InitiateCheckout');
+  }
+  setTimeout(function() { window.open(url, '_blank'); }, 150);
+}
+
+// Botões via ID (checkoutMain, checkoutFinal, checkoutOfferFinal)
 document.querySelectorAll('#checkoutMain, #checkoutFinal, #checkoutOfferFinal').forEach(btn => {
   btn.href = checkoutUrl;
   btn.target = '_blank';
   btn.rel = 'noopener noreferrer';
+  btn.addEventListener('click', trackAndGo);
+});
+
+// Botões com href direto para herospark
+document.querySelectorAll('a[href="' + checkoutUrl + '"]').forEach(btn => {
+  btn.addEventListener('click', trackAndGo);
 });
 </script>
 
