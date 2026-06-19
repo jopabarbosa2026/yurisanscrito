@@ -2651,7 +2651,7 @@ function trackAndGo(e) {
   e.preventDefault();
   const url = checkoutUrl;
   if (typeof fbq === 'function') {
-    fbq('track', 'InitiateCheckout');
+    fbq('track', 'AddToCart');
   }
   setTimeout(function() { window.open(url, '_blank'); }, 150);
 }
