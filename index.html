@@ -492,35 +492,49 @@ section { padding: 6rem 1.5rem; position: relative; }
   .hero-mala { max-width: 340px; margin: 0 auto; }
 }
 
-/* === HERO JAPAMĀLĀ === */
+/* === HERO IMAGEM TRIŚŪLA === */
 .hero-mala {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.hero-mala::before {
+.mala-image {
+  width: 100%;
+  max-width: 440px;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 1px rgba(201,166,86,0.25);
+  animation: mala-float 6s ease-in-out infinite;
+}
+.mala-image::after {
   content: '';
   position: absolute;
-  width: 90%;
-  height: 90%;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(217,101,30,0.14) 0%, rgba(201,166,86,0.06) 45%, transparent 70%);
+  inset: 0;
+  background: linear-gradient(180deg, transparent 55%, rgba(26,8,5,0.4) 100%);
   pointer-events: none;
 }
-.mala-spin {
-  width: 100%;
-  max-width: 420px;
-  animation: mala-rotate 60s linear infinite;
-  transform-origin: 50% 50%;
+.mala-image::before {
+  content: '';
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(201,166,86,0.3);
+  border-radius: 4px;
+  pointer-events: none;
+  z-index: 2;
 }
-.mala-svg { width: 100%; height: auto; display: block; }
-@keyframes mala-rotate {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.mala-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+@keyframes mala-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mala-spin { animation: none; }
+  .mala-image { animation: none; }
 }
 
 /* === SECTION: TESTIMONIALS (BLOCO 2) === */
@@ -1791,25 +1805,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <aside class="hero-mala">
-        <div class="mala-spin">
-          <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="mala-svg" aria-label="Japamālā de rudrākṣa">
-            <defs>
-              <radialGradient id="beadGrad" cx="38%" cy="32%" r="70%">
-                <stop offset="0%" stop-color="#8B4A2B"/>
-                <stop offset="45%" stop-color="#6B3418"/>
-                <stop offset="100%" stop-color="#3E1C0C"/>
-              </radialGradient>
-              <radialGradient id="beadGradGuru" cx="38%" cy="32%" r="70%">
-                <stop offset="0%" stop-color="#A85A33"/>
-                <stop offset="45%" stop-color="#7C3D1C"/>
-                <stop offset="100%" stop-color="#4A2210"/>
-              </radialGradient>
-              <filter id="beadShadow" x="-40%" y="-40%" width="180%" height="180%">
-                <feDropShadow dx="0" dy="1.5" stdDeviation="2" flood-color="#1A0805" flood-opacity="0.55"/>
-              </filter>
-            </defs>
-            <g id="mala-group" filter="url(#beadShadow)"></g>
-          </svg>
+        <div class="mala-image">
+          <img src="hero-trishula.jpg" alt="Triśūla e japamālā de rudrākṣa" loading="eager">
         </div>
       </aside>
 
@@ -2722,93 +2719,6 @@ document.querySelectorAll('#checkoutMain, #checkoutFinal, #checkoutOfferFinal').
 document.querySelectorAll('a[href="' + checkoutUrl + '"]').forEach(btn => {
   btn.addEventListener('click', trackAndGo);
 });
-
-// === GERAÇÃO DA JAPAMĀLĀ DE RUDRĀKṢA ===
-(function() {
-  const group = document.getElementById('mala-group');
-  if (!group) return;
-
-  const SVGNS = 'http://www.w3.org/2000/svg';
-  const cx = 200, cy = 200;      // centro
-  const ringR = 150;             // raio do anel
-  const beadCount = 27;          // contas (múltiplo tradicional de 27)
-  const beadR = 20;              // raio de cada conta
-
-  function rudraksha(bx, by, r, isGuru) {
-    const g = document.createElementNS(SVGNS, 'g');
-
-    // Corpo da conta
-    const circle = document.createElementNS(SVGNS, 'circle');
-    circle.setAttribute('cx', bx);
-    circle.setAttribute('cy', by);
-    circle.setAttribute('r', r);
-    circle.setAttribute('fill', isGuru ? 'url(#beadGradGuru)' : 'url(#beadGrad)');
-    g.appendChild(circle);
-
-    // Sulcos radiais (mukhi) — a textura característica do rudrāksha
-    const facets = 5;
-    for (let i = 0; i < facets; i++) {
-      const ang = (Math.PI * 2 / facets) * i + 0.3;
-      const path = document.createElementNS(SVGNS, 'path');
-      // curva do topo ao fundo passando pela borda
-      const x1 = bx + Math.cos(ang) * r * 0.15;
-      const y1 = by + Math.sin(ang) * r * 0.15;
-      const x2 = bx + Math.cos(ang) * r * 0.95;
-      const y2 = by + Math.sin(ang) * r * 0.95;
-      const mx = bx + Math.cos(ang + 0.4) * r * 0.6;
-      const my = by + Math.sin(ang + 0.4) * r * 0.6;
-      path.setAttribute('d', `M${x1.toFixed(1)},${y1.toFixed(1)} Q${mx.toFixed(1)},${my.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`);
-      path.setAttribute('fill', 'none');
-      path.setAttribute('stroke', '#2A1206');
-      path.setAttribute('stroke-width', (r * 0.09).toFixed(1));
-      path.setAttribute('stroke-linecap', 'round');
-      path.setAttribute('opacity', '0.7');
-      g.appendChild(path);
-    }
-
-    // Brilho especular
-    const shine = document.createElementNS(SVGNS, 'ellipse');
-    shine.setAttribute('cx', bx - r * 0.3);
-    shine.setAttribute('cy', by - r * 0.35);
-    shine.setAttribute('rx', r * 0.28);
-    shine.setAttribute('ry', r * 0.18);
-    shine.setAttribute('fill', '#C9884F');
-    shine.setAttribute('opacity', '0.45');
-    g.appendChild(shine);
-
-    return g;
-  }
-
-  // Fio do colar (anel dourado sutil)
-  const thread = document.createElementNS(SVGNS, 'circle');
-  thread.setAttribute('cx', cx);
-  thread.setAttribute('cy', cy);
-  thread.setAttribute('r', ringR);
-  thread.setAttribute('fill', 'none');
-  thread.setAttribute('stroke', '#9B7A3F');
-  thread.setAttribute('stroke-width', '1.5');
-  thread.setAttribute('opacity', '0.5');
-  group.appendChild(thread);
-
-  // Contas ao redor do anel
-  for (let i = 0; i < beadCount; i++) {
-    const ang = (Math.PI * 2 / beadCount) * i - Math.PI / 2;
-    const bx = cx + Math.cos(ang) * ringR;
-    const by = cy + Math.sin(ang) * ringR;
-    group.appendChild(rudraksha(bx, by, beadR, false));
-  }
-
-  // Conta guru (maior) no topo + borla
-  const guruX = cx, guruY = cy - ringR - 8;
-  group.appendChild(rudraksha(guruX, guruY, beadR * 1.5, true));
-
-  // Meru pendente
-  const meru = document.createElementNS(SVGNS, 'g');
-  const meruBead = document.createElementNS(SVGNS, 'g');
-  meruBead.appendChild(rudraksha(guruX, guruY - beadR * 1.8, beadR * 0.9, true));
-  meru.appendChild(meruBead);
-  group.appendChild(meru);
-})();
 </script>
 
 </body>
