@@ -8,6 +8,14 @@
     {
       "source": "/estudoguiado",
       "destination": "/estudoguiado.html"
+    },
+    {
+      "source": "/vsl",
+      "destination": "https://sanscritovideo.vercel.app"
+    },
+    {
+      "source": "/vsl/:path*",
+      "destination": "https://sanscritovideo.vercel.app/:path*"
     }
   ],
   "headers": [
